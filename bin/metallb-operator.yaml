@@ -5453,3 +5453,16 @@ subjects:
 - kind: ServiceAccount
   name: speaker
   namespace: metallb-system
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: metallb-system
+  name: config
+data:
+  config: |
+    address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+      - 192.168.1.50-192.168.1.99 # Change the range here
